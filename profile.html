@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name - Portfolio</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #f1f5f8;
+            color: #333;
+        }
+
+        header {
+            background-color: #1e3d58;
+            padding: 15px 0;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0 25px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+            font-size: 18px;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #67c5b5;
+        }
+
+        /* Home Section */
+        #home {
+            background: linear-gradient(135deg, #6a11cb, #2575fc);
+            text-align: center;
+            padding: 80px 0;
+            color: #fff;
+        }
+
+        #home .intro h1 {
+            font-size: 50px;
+            margin-bottom: 10px;
+        }
+
+        #home .intro p {
+            font-size: 22px;
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        /* About Me Section */
+        #about {
+            padding: 60px 20px;
+            background-color: #eff7f8;
+        }
+
+        #about h2 {
+            text-align: center;
+            font-size: 36px;
+            color: #2d3a3f;
+            margin-bottom: 20px;
+        }
+
+        .bio {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            gap: 30px;
+            text-align: center;
+        }
+
+        .bio img {
+            border-radius: 50%;
+            width: 180px;
+            height: 180px;
+            border: 4px solid #67c5b5;
+        }
+
+        .bio p {
+            font-size: 18px;
+            max-width: 700px;
+            line-height: 1.6;
+            color: #4a4a4a;
+        }
+
+        /* Projects Section */
+        #projects {
+            padding: 60px 20px;
+            background-color: #68b3a0;
+        }
+
+        #projects h2 {
+            text-align: center;
+            font-size: 36px;
+            color: #fff;
+            margin-bottom: 30px;
+        }
+
+        .projects-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .project-card {
+            background-color: #fff;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+            padding: 30px;
+            width: 280px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .project-card h3 {
+            font-size: 24px;
+            color: #3c3c3c;
+            margin-bottom: 15px;
+        }
+
+        .project-card p {
+            font-size: 16px;
+            color: #777;
+            margin-bottom: 15px;
+        }
+
+        .project-card a {
+            text-decoration: none;
+            color: #68b3a0;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        .project-card a:hover {
+            color: #2575fc;
+        }
+
+        /* Experience Section */
+        #experience {
+            padding: 60px 20px;
+            background-color: #f7f7f7;
+        }
+
+        #experience h2 {
+            text-align: center;
+            font-size: 36px;
+            color: #2d3a3f;
+            margin-bottom: 30px;
+        }
+
+        #experience ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        #experience li {
+            margin: 25px 0;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        #experience li strong {
+            font-size: 20px;
+            color: #2575fc;
+        }
+
+        #experience li p {
+            font-size: 16px;
+            color: #555;
+        }
+
+        /* Contact Section */
+        #contact {
+            padding: 60px 20px;
+            background-color: #2575fc;
+            color: #fff;
+            text-align: center;
+        }
+
+        #contact h2 {
+            font-size: 36px;
+            margin-bottom: 30px;
+        }
+
+        /* Contact Information Styling */
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-size: 18px;
+            color: #fff;
+        }
+
+        .contact-item i {
+            font-size: 24px;
+            color: #67c5b5;
+        }
+
+        .contact-item p {
+            font-size: 20px;
+            margin: 0;
+        }
+
+        /* Adding some hover effects for interactivity */
+        .contact-item:hover {
+            color: #67c5b5;
+        }
+
+        .contact-item i:hover {
+            transform: scale(1.1);
+            transition: transform 0.3s ease;
+        }
+
+        /* Footer Section */
+        footer {
+            background-color: #1e3d58;
+            color: #fff;
+            text-align: center;
+            padding: 15px;
+        }
+
+        footer p {
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About Me</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Home Section -->
+    <section id="home">
+        <div class="intro">
+            <h1>Hello, I'm Thukten Tshering</h1>
+            <p>Welcome to my portfolio. I am a passionate web developer, designer, and problem-solver.</p>
+        </div>
+    </section>
+
+    <!-- About Me Section -->
+    <section id="about">
+        <h2>About Me</h2>
+        <div class="bio">
+            <img src="default.jpg" alt="Your Profile Picture">
+            <p>I am a passionate full-stack developer with a strong foundation in both front-end and back-end technologies, including HTML, CSS, JavaScript, and Python. I enjoy tackling challenging problems and creating seamless digital experiences that prioritize both functionality and design. With a keen eye for detail and a commitment to continuous learning, I strive to stay ahead of industry trends and develop efficient, scalable web applications.</p>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <h2>Projects</h2>
+        <div class="projects-list">
+            <div class="project-card">
+                <h3>Waste Reduction and Recycling Initiative</h3>
+                <p>As part of the company’s commitment to sustainability, I led the implementation of a company-wide waste reduction and recycling program. This project aimed to reduce the organization’s waste output by 30% within the first year of implementation.</p>
+                <a href="#">View Project</a>
+            </div>
+            <div class="project-card">
+                <h3>Environmental Compliance and Risk Management Strategy</h3>
+                <p>I was responsible for leading the environmental compliance and risk assessment for the company’s new manufacturing plant, ensuring compliance with environmental laws and sustainability standards.</p>
+                <a href="#">View Project</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience">
+        <h2>Experience & Education</h2>
+        <ul>
+            <li>
+                <strong>CEO - Company</strong>
+                <p>Lead and manage environmental compliance programs to ensure the company adheres to environmental regulations.</p>
+                <p>2025 - 2030</p>
+            </li>
+            <li>
+                <strong>Bachelor of Science in Environmental Science - College of Science and Technology</strong>
+                <p>Focused on sustainable operations and corporate responsibility.</p>
+                <p>2023 - 2027</p>
+            </li>
+        </ul>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Contact</h2>
+        <div class="contact-info">
+            <div class="contact-item">
+                <i class="fas fa-phone-alt"></i>
+                <p>17990854</p>
+            </div>
+            <div class="contact-item">
+                <i class="fas fa-envelope"></i>
+                <p>thuktentshering462@gmail.com</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>© 2025 Thukten Tshering. All rights reserved.</p>
+    </footer>
+</body>
+</html>
